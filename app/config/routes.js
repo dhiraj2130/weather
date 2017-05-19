@@ -1,7 +1,9 @@
 
 var React = require('react');
 var Main = require('../components/Main');
-var Home = require('../components/Home');
+// var Home = require('../components/Home');
+import Home from '../components/Home';
+
 var Router = require('react-router');
 var Route = Router.Router;
 var IndexRoute = Router.IndexRoute;

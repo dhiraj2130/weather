@@ -13,6 +13,7 @@
     "axios": "^0.8.0",
     "history": "^1.13.1",
     "react": "^0.14.3",
+    "react-geolocated": "^1.0.3",
     "react-redux": "^5.0.3",
     "react-router": "^1.0.3",
     "reactfire": "^0.5.1",

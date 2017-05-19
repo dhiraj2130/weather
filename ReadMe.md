@@ -1,6 +1,8 @@
 The widget is created as a React component whic his ..... The data captured from widget editor is kept in state through
 store and it has its own reducer and etc. This web application basically holds the widget or the React component.
 
+Need to enable geo location from privacy settings in chrome
+
 http://localhost:8090/#/?_k=36e2h2 : to see both the components
 To build a production version use:
 webpack --config webpack.config.prod.js

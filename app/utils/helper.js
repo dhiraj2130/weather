@@ -1,27 +1,23 @@
-/**
- * Created by dhiraj.kumar on 17/02/2017.
- */
+
 var axios = require('axios');
 
 
-function getRepos(username){
+function getWhether(){
     "use strict";
-    return axios.get('https://api.github.com/users/'+username+'/repos');
+    return axios.get('http://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=105d98bfbd75e4f8fd97dab7e5ca5912');
+    
 };
 
-function getUserInfo(username){
-    "use strict";
-    return axios.get('https://api.github.com/users/'+username);
-};
+
 
 var helpers = {
-    getGitHubInfo : function(username){
+    getWhetherInfo : function(){
         "use strict";
-        return axios.all([getRepos(username),getUserInfo(username)])
+        return axios.all([getWhether()])
             .then(function(arr){
                 return {
-                    repos : arr[0].data,
-                    bio : arr[1].data
+                    report : arr[0].data,
+
                 }
             });
     }
