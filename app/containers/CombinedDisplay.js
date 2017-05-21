@@ -16,6 +16,8 @@ const mapStateToProps = (state) => {
     return {
         temp : state.details.temp,
         name:state.details.name,
+        windspeed : state.details.windspeed,
+        winddegree:state.details.winddegree,
         title : state.title,
     }
 }

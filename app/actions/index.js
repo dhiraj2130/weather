@@ -3,8 +3,10 @@ export const WeatherEditorAdd =(title) => ({
     title
 })
 
-export const WeatherDisplayUpdate =({temp,name}) => ({
+export const WeatherDisplayUpdate =({temp, name, windspeed, winddegree}) => ({
     type:'ADD_WEATHERDISPLAYDETAILS',
     temp,
-    name
+    name,
+    windspeed,
+    winddegree
 })
