@@ -1,11 +1,10 @@
 // import WeatherDisplay from '../components/WeatherDisplay'
 // import { connect } from 'react-redux'
-// import { WeatherEditorAdd } from '../actions'
 //
 // const mapStateToProps = (state) => {
 //     "use strict";
 //     return {
-//         temperature : state.temperature
+//         title : state.title
 //     }
 // }
 //
