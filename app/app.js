@@ -5,9 +5,9 @@ import { Router, browserHistory } from 'react-router';
 var routes = require('./config/routes');
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import weatherReducer from './reducers'
+import appReducer from './reducers'
 
-let store = createStore(weatherReducer)
+let store = createStore(appReducer)
 
 ReactDOM.render(
     <Provider store={store}>

@@ -1,20 +1,21 @@
 import CombinedDisplay from '../components/CombinedDisplay'
 import { connect } from 'react-redux'
-import { WeatherEditorAdd } from '../actions'
+import { WeatherDisplayUpdate } from '../actions'
 
 const mapDispatchToProps = (dispatch) => {
     "use strict";
     return {
-        onSubmit : (title) =>{
-            dispatch(WeatherEditorAdd(title))
+        onUpdate : (temp) =>{
+            dispatch(WeatherDisplayUpdate(temp))
         }
     }
 }
 const mapStateToProps = (state) => {
     "use strict";
-    console.log(state.title);
+    console.log(state.temp);
     return {
-        title : state.title
+        temp : state.temp,
+        title : state.title,
     }
 }
 

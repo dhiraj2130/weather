@@ -8,8 +8,11 @@ let WeatherDisplay = (props) => {
     return(
         <div >
             <h2>hello</h2>
+
             {props.title}
-           
+
+            {props.temp}
+
         </div>
     )
 

@@ -1,14 +1,10 @@
-const weatherEditor = (state={title:''}, action) => {
-    switch(action.type){
-        case 'ADD_WEATHERDETAILS' :
+import { combineReducers } from 'redux'
+import weatherDisplay from './WeatherDisplay'
+import weatherParameters from './WeatherParameters'
 
-           // state = Object.assign(state,{title:action.title,unit:action.unit,showWind:action.showWind})
-            state = Object.assign({},state,{title:action.title})
-            return state
+const appReducer = combineReducers({
+    temp:weatherDisplay,
+    title:weatherParameters,
+})
 
-        default:
-            return state
-    }
-}
-
-export default weatherEditor
+export default appReducer

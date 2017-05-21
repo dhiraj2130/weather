@@ -11,10 +11,10 @@ class CombinedDisplay extends React.Component {
 
     }
     componentWillMount() {
-        this.setState({
-            temp:101
-        })
-        console.log(JSON.stringify(this.getState))
+        // this.setState({
+        //     temp:101
+        // })
+        // console.log(JSON.stringify(this.getState))
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
                 console.log(position.coords.latitude)
@@ -32,8 +32,18 @@ class CombinedDisplay extends React.Component {
                 console.log(JSON.stringify(data))
             }.bind(this))
 
+        this.props.onUpdate(1001);
+        // this.parameter = { title: this.props.title,
+        // temp:this.props.temp
+        // }
+
     }
 
+    componentDidMount() {
+
+        console.log("hi"+this.props.temp.temp);
+
+    }
     render(){
         return(
             <div>
@@ -47,7 +57,7 @@ class CombinedDisplay extends React.Component {
 
                     </div>
                     <div className="col-md-3 col-md-3">
-                        <WeatherDisplay title={this.props.title}  />
+                        <WeatherDisplay title={this.props.title.title} temp={this.props.temp.temp} />
                     </div>
 
 
