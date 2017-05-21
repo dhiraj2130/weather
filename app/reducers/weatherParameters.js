@@ -1,4 +1,4 @@
-const weatherParameters = (state={title:'gggg'}, action) => {
+const weatherParameters = (state={title:'Default Title'}, action) => {
     switch(action.type){
         case 'ADD_WEATHERDETAILS' :
 

@@ -13,6 +13,8 @@ let WeatherDisplay = (props) => {
 
             {props.temp}
 
+            {props.name}
+
         </div>
     )
 

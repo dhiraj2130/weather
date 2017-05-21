@@ -14,7 +14,8 @@ const mapStateToProps = (state) => {
     "use strict";
     console.log(state.temp);
     return {
-        temp : state.temp,
+        temp : state.details.temp,
+        name:state.details.name,
         title : state.title,
     }
 }

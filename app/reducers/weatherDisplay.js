@@ -1,10 +1,10 @@
-const weatherDisplay = (state={temp:'455'}, action) => {
+const weatherDisplay = (state={temp:'455',name:'dhiraj'}, action) => {
     switch(action.type){
         case 'ADD_WEATHERDISPLAYDETAILS' :
 
            // state = Object.assign(state,{title:action.title,unit:action.unit,showWind:action.showWind})
 
-            state = Object.assign({},state,{temp:action.temp})
+            state = Object.assign({},state,{temp:action.temp, name:action.name})
             console.log("hello1"+state.temp);
             return state
 

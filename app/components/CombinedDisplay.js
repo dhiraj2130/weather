@@ -18,30 +18,21 @@ class CombinedDisplay extends React.Component {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
                 console.log(position.coords.latitude)
+
+                Helper.getWhetherInfo()
+                    .then(function(data){
+                        console.log(JSON.stringify(data))
+                        this.props.onUpdate({temp:data.report.main.temp, name:'dhiraj'});
+                    }.bind(this))
             });
         } else {
             showError("Your browser does not support Geolocation!");
         }
-
-        Helper.getWhetherInfo()
-            .then(function(data){
-                // this.setState({
-                //     bio:data.bio,
-                //     repos:data.repos
-                // })
-                console.log(JSON.stringify(data))
-            }.bind(this))
-
-        this.props.onUpdate(1001);
-        // this.parameter = { title: this.props.title,
-        // temp:this.props.temp
-        // }
-
     }
 
     componentDidMount() {
 
-        console.log("hi"+this.props.temp.temp);
+        console.log("hi"+JSON.stringify(this.props));
 
     }
     render(){
@@ -57,7 +48,7 @@ class CombinedDisplay extends React.Component {
 
                     </div>
                     <div className="col-md-3 col-md-3">
-                        <WeatherDisplay title={this.props.title.title} temp={this.props.temp.temp} />
+                        <WeatherDisplay title={this.props.title.title} temp={this.props.temp} name={this.props.name}/>
                     </div>
 
 

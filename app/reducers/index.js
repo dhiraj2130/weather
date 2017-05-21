@@ -3,7 +3,7 @@ import weatherDisplay from './WeatherDisplay'
 import weatherParameters from './WeatherParameters'
 
 const appReducer = combineReducers({
-    temp:weatherDisplay,
+    details:weatherDisplay,
     title:weatherParameters,
 })
 
