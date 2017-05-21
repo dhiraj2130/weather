@@ -19,10 +19,10 @@ class CombinedDisplay extends React.Component {
             navigator.geolocation.getCurrentPosition((position) => {
                 console.log(position.coords.latitude)
 
-                Helper.getWhetherInfo()
+                Helper.getWhetherInfo(position.coords.latitude,position.coords.longitude)
                     .then(function(data){
                         console.log(JSON.stringify(data))
-                        this.props.onUpdate({temp:data.report.main.temp, name:'dhiraj'});
+                        this.props.onUpdate({temp:data.report.main.temp, name:data.report.name});
                     }.bind(this))
             });
         } else {
