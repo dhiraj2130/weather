@@ -44,7 +44,6 @@ class WeatherDisplay extends React.Component{
         }else{
             this.temp_ = <div style={this.itemStyle}>{this.props.temp}  Fahrenheit</div>;
         }
-        console.log(this.props);
         if(this.props.wind === 'on'){
             this.wind_ = <div style={this.itemStyle}>Wind Direction {this.props.winddegree }<div/>
                 Wind Speed{this.props.windspeed} Km/h</div>;
