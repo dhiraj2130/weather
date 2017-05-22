@@ -3,6 +3,8 @@ store and it has its own reducer and etc. This web application basically holds t
 
 Need to enable geo location from privacy settings in chrome
 
+things like require and import are used mixed. This is to showcase the different ways of doing things.
+
 http://localhost:8090/#/?_k=36e2h2 : to see both the components
 To build a production version use:
 webpack --config webpack.config.prod.js

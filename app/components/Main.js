@@ -1,7 +1,4 @@
-
-var React = require('react');
-
-
+import React from 'react'
 
 var Main = React.createClass({
     render:function(){
@@ -14,11 +11,8 @@ var Main = React.createClass({
                     <div className="container">
                        {this.props.children}
                     </div>
-                   
                 </div>
-
         )
     }
 });
-
 module.exports = Main;

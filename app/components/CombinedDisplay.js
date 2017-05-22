@@ -1,9 +1,8 @@
 import React from 'react'
-
-
-var Helper = require('../utils/helper');
 import WeatherEditor from '../containers/WeatherEditorAddDetails';
 import WeatherDisplay from './WeatherDisplay';
+
+var Helper = require('../utils/helper');
 
 class CombinedDisplay extends React.Component {
     constructor(props){
@@ -12,15 +11,10 @@ class CombinedDisplay extends React.Component {
 
     }
     componentWillMount() {
-        // this.setState({
-        //     temp:101
-        // })
-        // console.log(JSON.stringify(this.getState))
         this.getTemparatureInfo(this.props.unit);
 
     }
     componentWillReceiveProps(nextProps){
-        console.log("this.props.unit " +nextProps.unit);
         this.getTemparatureInfo(nextProps.unit);
 
     }
@@ -40,39 +34,29 @@ class CombinedDisplay extends React.Component {
         }
     }
 
-    componentDidMount() {
-
-        console.log("hi"+JSON.stringify(this.props));
-
-    }
     render(){
         return(
             <div>
                 <h2 className="text-center">
-                    Weather Editor and component Page
+                    Weather Editor and Display Components Demo
                 </h2>
-
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-5">
                         <WeatherEditor />
-
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-3">
                         <WeatherDisplay title={this.props.title}
                                         temp={this.props.temp}
                                         windspeed={this.props.windspeed}
                                         winddegree={this.props.winddegree}
                                         name={this.props.name}
                                         unit={this.props.unit}
+                                        wind={this.props.wind}
                         />
                     </div>
-
-
                 </div>
-
             </div>
         )
     }
 }
-
 export default CombinedDisplay

@@ -1,5 +1,5 @@
 
-var React = require('react');
+import React from 'react'
 import CombinedDisplay from '../containers/CombinedDisplay'
 
 class Home extends React.Component {
@@ -7,8 +7,6 @@ class Home extends React.Component {
         super(props)
 
     }
-
-
     render(){
         return(
             <div>
@@ -20,9 +18,3 @@ class Home extends React.Component {
 }
 
 module.exports = Home
-// export default geolocated({
-//     positionOptions: {
-//         enableHighAccuracy: false,
-//     },
-//     userDecisionTimeout: 5000
-// })(HomeGeoLocated);

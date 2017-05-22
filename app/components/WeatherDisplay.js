@@ -1,8 +1,6 @@
-
 import React from 'react'
 
 class WeatherDisplay extends React.Component{
-
     constructor(props) {
         super(props);
         /* Style values can be read from props to make them real configurable as a component
@@ -35,25 +33,30 @@ class WeatherDisplay extends React.Component{
             fontSize:"25",
             display:"block"
         }
+        this.temp_=''
+        this.wind_=''
 
     }
 
     render() {
+        if(this.props.unit === 'C'){
+            this.temp_ = <div style={this.itemStyle}>{this.props.temp}  Celsius</div>;
+        }else{
+            this.temp_ = <div style={this.itemStyle}>{this.props.temp}  Fahrenheit</div>;
+        }
+        console.log(this.props);
+        if(this.props.wind === 'on'){
+            this.wind_ = <div style={this.itemStyle}>Wind Direction {this.props.winddegree }<div/>
+                Wind Speed{this.props.windspeed} Km/h</div>;
+        }else{
+            this.wind_ ='';
+        }
         return (
             <div style={this.myStyle}>
                 <div style={this.titleStyle}>{this.props.title}</div>
                 <div style={this.nameStyle}> {this.props.name}</div>
-                
-                <div style={this.itemStyle}>{this.props.temp}  Celsius</div>
-
-
-                {this.props.temp}
-
-
-                {this.props.windspeed}
-
-                {this.props.winddegree}
-
+                {this.temp_}
+                {this.wind_}
             </div>
         )
     }

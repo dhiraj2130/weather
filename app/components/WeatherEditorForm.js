@@ -40,7 +40,6 @@ class WeatherEditorForm extends React.Component {
         this.props.onChangeWind(e.target.value)
     }
 
-
     render() {
         return (
             <div style={this.myStyle}>
