@@ -1,7 +1,7 @@
 var axios = require('axios');
+import apikey from '../config/apikey';
 
 function getWhether(lat, lon, unit){
-    let apikey = '105d98bfbd75e4f8fd97dab7e5ca5912';
     let unit_ = unit === 'C' ? 'metric' : 'imperial';
     return axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apikey}&units=${unit_}`);
 };

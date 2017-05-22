@@ -12,12 +12,17 @@ class CombinedDisplay extends React.Component {
     }
     componentWillMount() {
         this.getTemparatureInfo(this.props.unit);
+        this.timerid = setInterval(this.getTemparatureInfo(this.props.unit),10);
 
     }
     componentWillReceiveProps(nextProps){
         this.getTemparatureInfo(nextProps.unit);
 
     }
+    componentWillUnmount(){
+        clearInterval(this.timerid);
+    }
+
 
     getTemparatureInfo(unit){
         if (navigator.geolocation) {

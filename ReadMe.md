@@ -5,6 +5,11 @@ Need to enable geo location from privacy settings in chrome
 
 things like require and import are used mixed. This is to showcase the different ways of doing things.
 
+config folder has apikey.js file which holds the apikey. This needs to be changed with a real one. As of now it is only
+a dummy value for demo and not working.
+
+for better User experience, images can be added for sunshine , rainy weather etc
+timer is set to update the weather condition. It needs to be tested though.
 http://localhost:8090/#/?_k=36e2h2 : to see both the components
 To build a production version use:
 webpack --config webpack.config.prod.js
