@@ -42,11 +42,11 @@ class CombinedDisplay extends React.Component {
                 </h2>
 
                 <div className="row">
-                    <div className="col-md-3">
+                    <div className="col-md-6">
                         <WeatherEditor />
 
                     </div>
-                    <div className="col-md-3 col-md-3">
+                    <div className="col-md-6">
                         <WeatherDisplay title={this.props.title.title} temp={this.props.temp}
                                         windspeed={this.props.windspeed} winddegree={this.props.winddegree}
                                         name={this.props.name}/>
