@@ -4,7 +4,7 @@ store and it has its own reducer and etc. This web application basically holds t
 Need to enable geo location from privacy settings in chrome
 
 things like require and import are used mixed. This is to showcase the different ways of doing things.
-
+constants should be used for hard coded values in action class and reducers like 'CHANGE_TITLE'
 config folder has apikey.js file which holds the apikey. This needs to be changed with a real one. As of now it is only
 a dummy value for demo and not working.
 
