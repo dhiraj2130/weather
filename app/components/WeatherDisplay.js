@@ -1,25 +1,61 @@
 
 import React from 'react'
 
-let WeatherDisplay = (props) => {
-    "use strict";
-    // let input;
+class WeatherDisplay extends React.Component{
 
-    return(
-        <div >
-            <h2>hello</h2>
+    constructor(props) {
+        super(props);
+        /* Style values can be read from props to make them real configurable as a component
+         */
+        this.myStyle ={
+            border:"solid black 1px",
+            width: "300px",
+            background:"#f4f5f7"
+        }
+        this.label ={
+            margin: "8px",
+            display: "block"
 
-            {props.title}
+        }
+        this.titleStyle ={
+            textAlign:"left",
+            margin:"20px",
+            fontSize:"20",
+            display:"block"
+        }
+        this.itemStyle ={
+            textAlign:"right",
+            margin:"20px",
+            fontSize:"15",
+            display:"block"
+        }
+        this.nameStyle ={
+            textAlign:"right",
+            margin:"20px",
+            fontSize:"25",
+            display:"block"
+        }
 
-            {props.temp}
+    }
 
-            {props.name}
-            {props.windspeed}
+    render() {
+        return (
+            <div style={this.myStyle}>
+                <div style={this.titleStyle}>{this.props.title}</div>
+                <div style={this.nameStyle}> {this.props.name}</div>
+                
+                <div style={this.itemStyle}>{this.props.temp}  Celsius</div>
 
-            {props.winddegree}
 
-        </div>
-    )
+                {this.props.temp}
 
+
+                {this.props.windspeed}
+
+                {this.props.winddegree}
+
+            </div>
+        )
+    }
 }
 export default WeatherDisplay

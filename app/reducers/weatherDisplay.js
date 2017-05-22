@@ -1,4 +1,4 @@
-const weatherDisplay = (state={temp:'455',name:'dhiraj',windspeed:'',winddegree:''}, action) => {
+const weatherDisplay = (state={temp:'',name:'',windspeed:'',winddegree:''}, action) => {
     switch(action.type){
         case 'ADD_WEATHERDISPLAYDETAILS' :
 

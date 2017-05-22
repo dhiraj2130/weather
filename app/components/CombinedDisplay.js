@@ -8,6 +8,7 @@ import WeatherDisplay from './WeatherDisplay';
 class CombinedDisplay extends React.Component {
     constructor(props){
         super(props)
+        this.getTemparatureInfo = this.getTemparatureInfo.bind(this);
 
     }
     componentWillMount() {
@@ -15,9 +16,19 @@ class CombinedDisplay extends React.Component {
         //     temp:101
         // })
         // console.log(JSON.stringify(this.getState))
+        this.getTemparatureInfo(this.props.unit);
+
+    }
+    componentWillReceiveProps(nextProps){
+        console.log("this.props.unit " +nextProps.unit);
+        this.getTemparatureInfo(nextProps.unit);
+
+    }
+
+    getTemparatureInfo(unit){
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
-                Helper.getWhetherInfo(position.coords.latitude,position.coords.longitude)
+                Helper.getWhetherInfo(position.coords.latitude, position.coords.longitude, unit)
                     .then(function(data){
                         console.log(JSON.stringify(data))
                         this.props.onUpdate({temp:data.report.main.temp, name:data.report.name,
@@ -47,9 +58,13 @@ class CombinedDisplay extends React.Component {
 
                     </div>
                     <div className="col-md-6">
-                        <WeatherDisplay title={this.props.title.title} temp={this.props.temp}
-                                        windspeed={this.props.windspeed} winddegree={this.props.winddegree}
-                                        name={this.props.name}/>
+                        <WeatherDisplay title={this.props.title}
+                                        temp={this.props.temp}
+                                        windspeed={this.props.windspeed}
+                                        winddegree={this.props.winddegree}
+                                        name={this.props.name}
+                                        unit={this.props.unit}
+                        />
                     </div>
 
 

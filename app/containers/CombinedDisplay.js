@@ -12,13 +12,13 @@ const mapDispatchToProps = (dispatch) => {
 }
 const mapStateToProps = (state) => {
     "use strict";
-    console.log(state.temp);
     return {
         temp : state.details.temp,
         name:state.details.name,
         windspeed : state.details.windspeed,
         winddegree:state.details.winddegree,
         title : state.title,
+        unit: state.unit
     }
 }
 
