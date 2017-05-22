@@ -1,16 +1,25 @@
 import WeatherEditorForm from '../components/WeatherEditorForm'
 import { connect } from 'react-redux'
-import { WeatherEditorAdd } from '../actions'
+import { ChangeTitle } from '../actions'
 
 const mapDispatchToProps = (dispatch) => {
     "use strict";
     return {
-        onSubmit : (title) =>{
-             dispatch(WeatherEditorAdd(title))
+        onChangeTitle : (title) =>{
+             dispatch(ChangeTitle(title))
         }
     }
 }
 
-let WeatherEditor = connect(null, mapDispatchToProps)(WeatherEditorForm)
+const mapStateToProps = (state) => {
+    "use strict";
+    return {
+        title : state.title,
+        unit : state.unit,
+        wind : state.wind
+    }
+}
+
+let WeatherEditor = connect(mapStateToProps, mapDispatchToProps)(WeatherEditorForm)
 
 export default WeatherEditor

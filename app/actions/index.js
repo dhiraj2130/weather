@@ -1,5 +1,5 @@
-export const WeatherEditorAdd =(title) => ({
-    type:'ADD_WEATHERDETAILS',
+export const ChangeTitle =(title) => ({
+    type:'CHANGE_TITLE',
     title
 })
 
